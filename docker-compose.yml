@@ -1,0 +1,10 @@
+services:
+  
+  joblistingsdb:
+     image : mongo
+  jobscraper.console:
+    image: ${DOCKER_REGISTRY-}jobscraperconsole
+    build:
+      context: .
+      dockerfile: JobScraper.Console/Dockerfile
+

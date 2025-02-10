@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+     joblistingsdb:
+      container_name:  joblistingsdb
+      restart: always
+      ports:
+        - "27019:27017"
+      volumes:
+       - "/var/lib/joblistingsdbdata:/data/db"
+      command: ["mongod", "--port", "27017"]

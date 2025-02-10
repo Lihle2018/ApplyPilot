@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "JobScraper.Console": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
