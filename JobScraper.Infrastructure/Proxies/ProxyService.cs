@@ -1,5 +1,5 @@
-﻿using JobScraper.Domain.Interfaces;
-using JobScraper.Infrastructure.Exceptions.JobScraper.Domain.Exceptions;
+﻿using JobScraper.Domain.Services;
+using JobScraper.Infrastructure.Exceptions;
 using System.Net;
 
 namespace JobScraper.Infrastructure.Proxies

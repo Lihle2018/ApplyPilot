@@ -5,7 +5,7 @@ namespace JobScraper.Domain.Entities
 {
     public class JobListing
     {
-        public Guid Id { get; private set; }
+        public string Id { get; private set; }
         public string Title { get; private set; }
         public JobDescription Description { get; private set; }
         public Company Company { get; private set; }
@@ -17,7 +17,7 @@ namespace JobScraper.Domain.Entities
 
         public JobListing(string title, JobDescription description, Company company, Location location, DateTime postedDate, JobType jobType, ExperienceLevel experienceLevel, SalaryRange salaryRange)
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
             Title = title;
             Description = description;
             Company = company;

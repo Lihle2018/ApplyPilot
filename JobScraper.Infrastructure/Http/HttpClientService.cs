@@ -1,5 +1,5 @@
-﻿using JobScraper.Domain.Interfaces;
-using System.Net.Http;
+﻿using JobScraper.Domain.Services;
+using System;
 
 namespace JobScraper.Infrastructure.Http
 {
@@ -17,9 +17,15 @@ namespace JobScraper.Infrastructure.Http
             return await _httpClient.GetStringAsync(url);
         }
 
-        public async Task<string> PostAsync(string url, HttpContent content)
+        public async Task<string> PostAsync(string url,HttpContent content)
         {
             var response = await _httpClient.PostAsync(url, content);
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<string> PostAsync(HttpRequestMessage httpRequest)
+        {
+            var response = await _httpClient.SendAsync(httpRequest);
             return await response.Content.ReadAsStringAsync();
         }
     }

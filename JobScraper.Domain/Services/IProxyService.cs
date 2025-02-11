@@ -1,4 +1,4 @@
-﻿namespace JobScraper.Domain.Interfaces
+﻿namespace JobScraper.Domain.Services
 {
     public interface IProxyService
     {
