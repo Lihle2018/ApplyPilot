@@ -1,4 +1,4 @@
-﻿namespace JobScraper.Domain.Contracts.Services
+﻿namespace JobScraper.Application.Contracts
 {
     public interface IEmailService
     {
