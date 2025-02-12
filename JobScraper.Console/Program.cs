@@ -84,7 +84,7 @@ namespace JobScraper.ConsoleApp
             services.AddInfrastructureServices(
                 proxyApiUrl: "https://your-proxy-url.com",
                 searchUrl: "https://your-search-url.com",
-                openAIApiUrl: "https://api.openai.com",
+                openAIApiUrl: "https://api.openai.com/completion",
                 openAIToken: "your-api-token",
                 mongoConnectionString: "your-mongo-connection-string",
                 mongoDatabaseName: "your-database-name",
