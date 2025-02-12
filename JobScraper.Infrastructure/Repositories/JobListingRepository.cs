@@ -1,5 +1,5 @@
-﻿using JobScraper.Domain.Entities;
-using JobScraper.Domain.Repositories;
+﻿using JobScraper.Domain.Contracts.Repositories;
+using JobScraper.Domain.Entities;
 using JobScraper.Infrastructure.Data.Interfaces;
 
 namespace JobScraper.Infrastructure.Repositories

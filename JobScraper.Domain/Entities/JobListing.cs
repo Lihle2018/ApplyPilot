@@ -5,7 +5,7 @@ namespace JobScraper.Domain.Entities
 {
     public class JobListing
     {
-        public string Id { get; private set; }
+        public string Id { get; init; }
         public string Title { get; private set; }
         public JobDescription Description { get; private set; }
         public Company Company { get; private set; }

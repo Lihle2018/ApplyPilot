@@ -1,6 +1,6 @@
 ﻿using JobScraper.Domain.Entities;
 
-namespace JobScraper.Domain.Services
+namespace JobScraper.Domain.Contracts.Services
 {
     public interface IJobScraper
     {

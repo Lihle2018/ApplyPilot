@@ -1,14 +1,16 @@
-﻿using JobScraper.Domain.Services;
-using JobScraper.Infrastructure.AIProcessing;
+﻿using JobScraper.Infrastructure.AIProcessing;
 using JobScraper.Infrastructure.Data.Interfaces;
 using JobScraper.Infrastructure.Data;
 using JobScraper.Infrastructure.Http;
 using JobScraper.Infrastructure.Proxies;
 using JobScraper.Infrastructure.Scrapers;
 using Microsoft.Extensions.DependencyInjection;
+using JobScraper.Domain.Contracts.Services;
+using JobScraper.Infrastructure.Repositories;
+using JobScraper.Domain.Contracts.Repositories;
 
 
-namespace JobScraper.Infrastructure.DependencyInjection
+namespace JobScraper.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -18,9 +20,10 @@ namespace JobScraper.Infrastructure.DependencyInjection
                                                                  string searchUrl,
                                                                  string openAIApiUrl,
                                                                  string openAIToken,
-                                                                 string mongoConnectionString, 
-                                                                 string mongoDatabaseName, 
-                                                                 string mongoCollectionName) 
+                                                                 string mongoConnectionString,
+                                                                 string mongoDatabaseName,
+                                                                string jobsCollectionName,
+                                                                string usersCollectionName)
         {
             services.AddScoped<IProxyService>(provider =>
                 new ProxyService(provider.GetRequiredService<IHttpClientService>(), proxyApiUrl));
@@ -34,7 +37,11 @@ namespace JobScraper.Infrastructure.DependencyInjection
                 new OpenAIClient(provider.GetRequiredService<IHttpClientService>(), openAIApiUrl, openAIToken));
 
             services.AddScoped<IJobContext>(provider =>
-                new JobContext(mongoConnectionString, mongoDatabaseName, mongoCollectionName));
+                new JobContext(mongoConnectionString, mongoDatabaseName, jobsCollectionName, usersCollectionName));
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IJobListingRepository, JobListingRepository>();
 
             return services;
         }

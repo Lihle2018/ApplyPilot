@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
 using System.Net;
-using JobScraper.Domain.Services;
+using JobScraper.Domain.Contracts.Services;
 
 namespace JobScraper.Infrastructure.EmailService
 {

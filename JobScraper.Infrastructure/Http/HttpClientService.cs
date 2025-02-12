@@ -1,4 +1,4 @@
-﻿using JobScraper.Domain.Services;
+﻿using JobScraper.Domain.Contracts.Services;
 using System;
 
 namespace JobScraper.Infrastructure.Http

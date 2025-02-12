@@ -1,6 +1,6 @@
-﻿using JobScraper.Domain.Entities;
+﻿using JobScraper.Domain.Contracts.Services;
+using JobScraper.Domain.Entities;
 using JobScraper.Domain.Enums;
-using JobScraper.Domain.Services;
 using JobScraper.Domain.ValueObjects;
 using PuppeteerSharp;
 using System.Globalization;

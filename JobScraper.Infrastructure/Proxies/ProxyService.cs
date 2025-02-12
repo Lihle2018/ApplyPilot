@@ -1,4 +1,4 @@
-﻿using JobScraper.Domain.Services;
+﻿using JobScraper.Domain.Contracts.Services;
 using JobScraper.Infrastructure.Exceptions;
 using System.Net;
 
