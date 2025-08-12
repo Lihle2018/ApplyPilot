@@ -13,6 +13,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobScraper.Console", "JobScraper.Console\JobScraper.Console.csproj", "{BC739DA0-1F2D-444B-9B63-84FAD4CEC282}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobScraper.Api", "JobScraper.Api\JobScraper.Api.csproj", "{951DFA4F-C7ED-42AB-A4BE-C892CD173ABE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BC739DA0-1F2D-444B-9B63-84FAD4CEC282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC739DA0-1F2D-444B-9B63-84FAD4CEC282}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC739DA0-1F2D-444B-9B63-84FAD4CEC282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951DFA4F-C7ED-42AB-A4BE-C892CD173ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951DFA4F-C7ED-42AB-A4BE-C892CD173ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951DFA4F-C7ED-42AB-A4BE-C892CD173ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951DFA4F-C7ED-42AB-A4BE-C892CD173ABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
