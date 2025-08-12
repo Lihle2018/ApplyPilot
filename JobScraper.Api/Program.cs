@@ -33,10 +33,9 @@ builder.Services.AddCors(options =>
 var configuration = builder.Configuration;
 
 // Add Application Services
-// builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices();
 
-// Add Infrastructure Services - commented out for testing
-/*
+// Add Infrastructure Services
 builder.Services.AddInfrastructureServices(
     proxyApiUrl: configuration.GetConnectionString("ProxyApiUrl") ?? "http://localhost:8000/proxy",
     searchUrl: configuration.GetConnectionString("GoogleJobsSearchUrl") ?? "https://www.google.com/search?q={0}+{1}+jobs",
@@ -47,7 +46,6 @@ builder.Services.AddInfrastructureServices(
     jobsCollectionName: configuration.GetConnectionString("JobsCollectionName") ?? "JobListings",
     usersCollectionName: configuration.GetConnectionString("UsersCollectionName") ?? "Users"
 );
-*/
 
 var app = builder.Build();
 

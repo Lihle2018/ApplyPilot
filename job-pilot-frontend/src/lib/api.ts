@@ -11,15 +11,15 @@ const apiClient = axios.create({
 });
 
 export const jobApi = {
-  // Mock scrape job listings (for testing)
+  // Scrape job listings (real implementation)
   scrapeJobs: async (request: ScrapingRequest): Promise<ScrapingResponse> => {
-    const response = await apiClient.post('/api/test/mock-scrape', request);
+    const response = await apiClient.post('/api/joblistings/scrape', request);
     return response.data;
   },
 
-  // Scrape job listings (real implementation)
-  scrapeJobsReal: async (request: ScrapingRequest): Promise<ScrapingResponse> => {
-    const response = await apiClient.post('/api/joblistings/scrape', request);
+  // Mock scrape job listings (for testing)
+  scrapeJobsMock: async (request: ScrapingRequest): Promise<ScrapingResponse> => {
+    const response = await apiClient.post('/api/test/mock-scrape', request);
     return response.data;
   },
 

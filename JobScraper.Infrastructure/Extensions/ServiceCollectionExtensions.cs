@@ -1,4 +1,4 @@
-﻿using JobScraper.Infrastructure.AIProcessing;
+using JobScraper.Infrastructure.AIProcessing;
 using JobScraper.Infrastructure.Data.Interfaces;
 using JobScraper.Infrastructure.Data;
 using JobScraper.Infrastructure.Http;
@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using JobScraper.Domain.Contracts.Services;
 using JobScraper.Infrastructure.Repositories;
 using JobScraper.Domain.Contracts.Repositories;
+using Microsoft.Extensions.Logging;
 
 
 namespace JobScraper.Infrastructure.Extensions
@@ -31,7 +32,7 @@ namespace JobScraper.Infrastructure.Extensions
             services.AddScoped<IHttpClientService, HttpClientService>();
 
             services.AddScoped<IJobScraper>(provider =>
-                new GoogleJobScraper(provider.GetRequiredService<IProxyService>(), searchUrl));
+                new SimpleJobScraper(provider.GetRequiredService<ILogger<SimpleJobScraper>>()));
 
             services.AddScoped<IAIProcessingService>(provider =>
                 new OpenAIClient(provider.GetRequiredService<IHttpClientService>(), openAIApiUrl, openAIToken));
